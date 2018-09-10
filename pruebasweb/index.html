@@ -1,0 +1,177 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pruebas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"> </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1> Pruebas </h1>
+    <p id="text"> Fecha de nacimiento</p>
+    <p id="text2"> Fecha de nac </p>
+    <h1>Intento 2 </h1>
+    <p id="text3"> FECHA DE </p>
+    <div class="container">
+        <canvas id="myChart1"></canvas>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="col-sm-6">
+                <canvas id="myChart"></canvas>            
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    //Global options
+
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    // Tabla de Barras
+    let massPopChart = new Chart(myChart , {
+        type: 'bar', //bar, horizontalBar, pie, line, doughnut, radar, poLarArea
+        data: {
+            labels:['Boston', 'Worcester', 'Springfield','Lowell', 'Cambridge', 'New Bedford'],
+            datasets:[{
+                label: 'Population',
+                data:[
+                    617594,
+                    181045,
+                    153060,
+                    106519,
+                    105162,
+                    95072
+                ],
+                //backgroundColor:'green'
+                backgroundColor: [
+                    'green',
+                    'blue',
+                    'red',
+                    'pink',
+                    'red',
+                    'green'
+                ],
+                borderWidth: 4,
+                borderColor: '#777',
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#000'
+            }]
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Largest Cities in Massachusetts',
+                fontSize: 25
+            },
+            legend:{
+                position: 'right'
+            }
+        }
+
+    });
+
+    let pieChart = document.getElementById("myChart2").getContext('2d');
+    //Grafica Pie
+    let masPopChart = new Chart(pieChart , {
+        type: 'pie', //bar, horizontalBar, pie, line, doughnut, radar, poLarArea
+        data: {
+            labels:['Boston', 'Worcester', 'Springfield','Lowell', 'Cambridge', 'New Bedford'],
+            datasets:[{
+                label: 'Population',
+                data:[
+                    617594,
+                    181045,
+                    153060,
+                    106519,
+                    105162,
+                    95072
+                ],
+                //backgroundColor:'green'
+                backgroundColor: [
+                    'green',
+                    'blue',
+                    'red',
+                    'pink',
+                    'red',
+                    'green'
+                ],
+                borderWidth: 4,
+                borderColor: '#777',
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#000'
+            }]
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Largest Cities in Massachusetts',
+                fontSize: 25
+            },
+            legend:{
+                position: 'right'
+            }
+        }
+
+    });
+
+    //Grafica de linea
+    let lineChart = document.getElementById("myChart1").getContext('2d');
+    
+    let mlineChart = new Chart(lineChart,{
+        type: 'line',
+        data: {
+            labels:['Boston', 'Worcester', 'Springfield','Lowell', 'Cambridge', 'New Bedford'],
+            datasets:[{
+                label: 'Population',
+                data:[
+                    617594,
+                    181045,
+                    153060,
+                    106519,
+                    105162,
+                    95072
+                ],
+                //backgroundColor:'green'
+                backgroundColor: [
+                    'green',
+                    'blue',
+                    'red',
+                    'pink',
+                    'red',
+                    'green'
+                ],
+                borderWidth: 4,
+                borderColor: '#777',
+                hoverBorderWidth: 4,
+                hoverBorderColor: '#000'
+            }]
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Largest Cities in Massachusetts',
+                fontSize: 25
+            },
+            legend:{
+                position: 'right'
+            }
+        }
+    });
+
+
+    </script>
+</body>
+</html>

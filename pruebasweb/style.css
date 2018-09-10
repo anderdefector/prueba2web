@@ -1,0 +1,31 @@
+#text {
+    display: block;
+}
+
+@media (max-width: 650px){
+    #text{
+        display: block;
+    }
+
+    #text2{
+        display: none;
+    }
+
+    #text3::after{
+        content: " NACIMIENTO";
+    }
+}
+
+@media (min-width: 651px){
+    #text{
+        display: none;
+    }
+
+    #text2{
+        display: block;
+    }
+
+    #text3::after{
+        content: " NAC";
+    }
+}
